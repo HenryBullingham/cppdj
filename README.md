@@ -1,4 +1,4 @@
-# Dependency Injection for C++ (cppdi)
+# Dependency Injection for C++ (cppdj)
 
 Dependency Injection is a useful testing / decoupling mechanism in other languages / platforms.
 cppdi is a small header-only dependency injection module
