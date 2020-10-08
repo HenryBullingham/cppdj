@@ -11,29 +11,29 @@ cppdi is a small header-only dependency injection module
 
 struct foo
 {
-		void do_something();
+    void do_something();
 }
 
 struct bar
 {
-		cppdj::dep<foo> m_foo; //Automatically injected on construction
+    cppdj::dep<foo> m_foo; //Automatically injected on construction
 
-		void do_other_thing()
-		{
-				m_foo->do_something();
-		}
+    void do_other_thing()
+    {
+		    m_foo->do_something();
+    }
 }
 
 void main()
 {
-		//Register foo and bar (in order)
-		//Note: doesn't currently support constructor arg forwarding
-		cppdj::register_dep<foo>();
-		cppdj::register_dep<bar>();
+    //Register foo and bar (in order)
+    //Note: doesn't currently support constructor arg forwarding
+    cppdj::register_dep<foo>();
+    cppdj::register_dep<bar>();
 
-		//Get a bar
-		cppdj::dep<bar> the_bar;
-		the_bar->do_other_thing(); //Will call the foo do_something()
+    //Get a bar
+    cppdj::dep<bar> the_bar;
+    the_bar->do_other_thing(); //Will call the foo do_something()
 }
 
 ```
